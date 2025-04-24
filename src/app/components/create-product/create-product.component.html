@@ -1,0 +1,18 @@
+<form  (ngSubmit)="onSubmit()">
+    <label>
+        Imagen:
+        <input type="text" placeholder="URL de la imagen" />
+    </label>
+
+    <label>
+        Nombre:
+        <input type="text" placeholder="Nombre del producto" />
+    </label>
+
+    <label>
+        Precio:
+        <input type="number" placeholder="Precio" />
+    </label>
+
+    <button type="submit" [disabled]="false">Crear Producto</button>
+</form>

@@ -1,0 +1,11 @@
+<div>
+    <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.imagen" alt="{{ product.name }}" class="product-img" />
+        <h3>{{ product.name }}</h3>
+        <p>Precio: {{ product.price | currency:'USD' }}</p>
+    </div>
+</div>
+
+<ng-template #noProducts>
+    <p>No hay productos disponibles.</p>
+</ng-template>
