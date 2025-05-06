@@ -1,0 +1,40 @@
+<div>
+    <h2>Actualizar producto</h2>
+
+    <!-- Búsqueda por ID -->
+    <div>
+        <label>ID del producto:</label>
+        <input type="number" [(ngModel)]="searchId" placeholder="Introduce el ID" />
+        <button (click)="findProduct()">Buscar</button>
+    </div>
+
+    <!-- Si se encuentra el producto -->
+    <div *ngIf="selectedProduct">
+        <form (ngSubmit)="updateProductById()" #updateForm="ngForm">
+            <label>Nombre:</label>
+            <input type="text" [(ngModel)]="selectedProduct.name" name="name" required />
+
+            <label>Precio:</label>
+            <input type="number" [(ngModel)]="selectedProduct.price" name="price" required />
+
+            <label>Imagen (URL):</label>
+            <input type="text" [(ngModel)]="selectedProduct.img" name="img" />
+
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+
+    <!-- Mensajes -->
+    <div *ngIf="updateSuccess" style="color: green; margin-top: 1rem;">
+        Producto actualizado correctamente.
+    </div>
+
+    <div *ngIf="updateError" style="color: red; margin-top: 1rem;">
+        Error al actualizar el producto.
+    </div>
+
+    <div *ngIf="notFound" style="color: red; margin-top: 1rem;">
+        Producto no encontrado.
+    </div>
+
+</div>

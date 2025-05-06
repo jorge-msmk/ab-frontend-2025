@@ -1,0 +1,37 @@
+<div>
+
+    <h1>Eliminar productos y usuarios de la base de datos</h1>
+    
+    <div>
+        <div class="delete-box">
+            <label for="productDeleteId">Eliminar producto por ID:</label>
+            <input type="number" [(ngModel)]="productDeleteId" id="productDeleteId" placeholder="Introduce un ID" />
+            <button (click)="deleteProductById(productDeleteId)">Eliminar</button>
+        </div>
+        
+        <div *ngIf="productDeleteSuccess" style="color: green; margin-top: 1rem;">
+            Producto eliminado correctamente.
+        </div>
+        
+        <div *ngIf="productDeleteFailed" style="color: red; margin-top: 1rem;">
+            No se encontró ningún producto con ese ID.
+        </div>
+    </div>
+    
+    <div>
+        <div class="delete-box">
+            <label for="userDeleteId">Eliminar Usuario por ID:</label>
+            <input type="number" [(ngModel)]="userDeleteId" id="userDeleteId" placeholder="Introduce un ID" />
+            <button (click)="deleteUserById(userDeleteId)">Eliminar</button>
+        </div>
+        
+        <div *ngIf="userDeleteSuccess" style="color: green; margin-top: 1rem;">
+            Usuario eliminado correctamente.
+        </div>
+        
+        <div *ngIf="userDeleteFailed" style="color: red; margin-top: 1rem;">
+            No se encontró ningún Usuario con ese ID.
+        </div>
+    </div>
+
+</div>

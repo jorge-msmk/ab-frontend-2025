@@ -1,0 +1,24 @@
+<div>
+    <header>
+        <h1>Productos disponibles</h1>
+    </header>
+
+    <div>
+        <div *ngIf="allProducts?.length > 0; else noProducts">
+            <div class="product-list">
+              @for (product of allProducts; track product.id) {
+                <div class="product-card">
+                  <img [src]="product.img || 'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'" alt="{{ product.name }}" />
+                  <h3>{{ product.name }}</h3>
+                  <p>Precio: ${{ product.price }}</p>
+                </div>
+              }
+            </div>
+          </div>
+          
+        <ng-template #noProducts>
+          <p>No hay productos disponibles.</p>
+        </ng-template>
+    </div>
+
+</div>

@@ -1,18 +1,25 @@
-<form  (ngSubmit)="onSubmit()">
-    <label>
-        Imagen:
-        <input type="text" placeholder="URL de la imagen" />
-    </label>
+<div>
+    <h2>Crear nuevo producto</h2>
 
-    <label>
-        Nombre:
-        <input type="text" placeholder="Nombre del producto" />
-    </label>
+    <form (ngSubmit)="createProduct()" #productForm="ngForm">
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="newProduct.name" name="name" required />
 
-    <label>
-        Precio:
-        <input type="number" placeholder="Precio" />
-    </label>
+        <label>Precio:</label>
+        <input type="number" [(ngModel)]="newProduct.price" name="price" required />
 
-    <button type="submit" [disabled]="false">Crear Producto</button>
-</form>
+        <label>URL de Imagen (opcional):</label>
+        <input type="text" [(ngModel)]="newProduct.img" name="img" />
+
+        <button type="submit" [disabled]="!productForm.form.valid">Crear producto</button>
+    </form>
+
+    <div *ngIf="success" style="color: green; margin-top: 1rem;">
+        Producto creado correctamente.
+    </div>
+
+    <div *ngIf="error" style="color: red; margin-top: 1rem;">
+        Ocurrió un error al crear el producto.
+    </div>
+
+</div>
