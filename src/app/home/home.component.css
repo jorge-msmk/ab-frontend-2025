@@ -1,8 +1,48 @@
+.assignment-brief {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefefe;
+    color: #333;
+    line-height: 1.6;
+}
 
+.assignment-brief h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
 
-.main-container {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-    gap: 40px;
+.assignment-brief section {
+    margin-bottom: 2rem;
+    border-left: 4px solid #007acc;
+    padding-left: 1rem;
+}
+
+.assignment-brief h2 {
+    font-size: 1.8rem;
+    color: #007acc;
+    margin-bottom: 1rem;
+}
+
+.assignment-brief ul {
+    margin-left: 1rem;
+}
+
+.assignment-brief code {
+    background-color: #eee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.assignment-brief a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.assignment-brief a:hover {
+    text-decoration: underline;
 }
