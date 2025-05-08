@@ -1,4 +1,4 @@
-/* Fuente global en Arial */
+
 body {
   margin: 0;
   padding: 0;
@@ -13,14 +13,14 @@ body {
   padding: 0 1rem;
 }
 
-/* Encabezado */
+
 header h1 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-/* Estado de carga y errores */
+
 .status {
   text-align: center;
   padding: 2rem 0;
@@ -50,7 +50,7 @@ header h1 {
   background: #0056b3;
 }
 
-/* Contenedor de tarjetas en fila */
+
 .user-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -58,7 +58,7 @@ header h1 {
   justify-items: center;
 }
 
-/* Tarjeta de usuario */
+
 .user-card {
   background: white;
   border-radius: 8px;
@@ -77,7 +77,7 @@ header h1 {
   outline: none;
 }
 
-/* Imagen de avatar */
+
 .avatar {
   width: 80px;
   height: 80px;
@@ -87,7 +87,7 @@ header h1 {
   border: 2px solid #eee;
 }
 
-/* Nombre y correo */
+
 .user-card h3 {
   margin: 0.5rem 0 0.25rem;
   font-size: 1.1rem;
@@ -98,7 +98,7 @@ header h1 {
   color: #555;
 }
 
-/* Hobbies */
+
 .hobbies {
   text-align: left;
   margin-top: 1rem;
