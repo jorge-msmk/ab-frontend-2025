@@ -16,11 +16,13 @@ export class CreateProductComponent {
     img: ''
   };
 
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
+
   success = false;
   error = false;
 
   createProduct() {
-    fetch('http://localhost:3000/api/products', {
+    fetch(this.fetchUrl + '/api/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

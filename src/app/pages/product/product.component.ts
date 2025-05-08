@@ -14,8 +14,10 @@ export class ProductComponent {
 
   searchId = null;
 
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
+  
   getProductById(id: string | null) {
-    fetch(`http://localhost:3000/api/products/${id}`)
+    fetch(`${this.fetchUrl}/api/products/${id}`)
       .then(response => response.json())
       .then(data => {
         this.product = data;

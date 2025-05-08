@@ -16,9 +16,11 @@ export class ProductsComponent implements OnInit {
     console.log('entramos on init')
     this.getProducts();
   }
+  
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
 
   getProducts() {
-    fetch(`http://localhost:3000/api/products`)
+    fetch(`${this.fetchUrl}/api/products`)
       .then(response => response.json())
       .then(data => {
         this.allProducts = data
