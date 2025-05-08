@@ -1,24 +1,65 @@
-<div>
-    <header>
-        <h1>Usuarios existentes</h1>
-    </header>
+<div class="users-container">
+  <header>
+    <h1>Usuarios Existentes</h1>
+  </header>
 
-    <div>
-        <div *ngIf="allUsers?.length > 0; else noUsers">
-            <div class="user-list">
-              @for (user of allUsers; track user.id) {
-                <div class="user-card">
-                  <img [src]="user.img || 'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'" alt="{{ user.name }}" />
-                  <h3>{{ user.name }}</h3>
-                  
-                </div>
-              }
-            </div>
+  <!-- Estado de carga -->
+  <div *ngIf="!allUsers && !error" class="status">
+    <p>Cargando usuarios…</p>
+  </div>
+
+  <!-- Estado de error -->
+  <div *ngIf="error" class="status error">
+    <p>
+      Error al cargar los usuarios.
+      <button (click)="getUsers()">Reintentar</button>
+    </p>
+  </div>
+
+  <!-- Lista de usuarios -->
+  <div *ngIf="allUsers && allUsers.length > 0; else noUsers">
+    <div class="user-list">
+      <div class="user-card" *ngFor="let user of allUsers">
+        <div class="user-header">
+          <img
+            [src]="user.img || defaultAvatar"
+            alt="Avatar de {{ user.name }}"
+            class="avatar"
+          />
+          <h3>{{ user.name }} ({{ user.edad }} años)</h3>
+        </div>
+
+        <p><strong>Género:</strong> {{ user.gender }}</p>
+        <p><strong>Residencia:</strong> {{ user.residency }}</p>
+
+        <div class="hobbies">
+          <div>
+            <strong>Deportes:</strong>
+            <ul>
+              <li *ngFor="let d of user.hobbies.deportes">{{ d }}</li>
+            </ul>
           </div>
-          
-        <ng-template #noUsers>
-          <p>No hay Usuarios disponibles.</p>
-        </ng-template>
+          <div>
+            <strong>Estudios:</strong>
+            <ul>
+              <li *ngFor="let e of user.hobbies.estudios">{{ e }}</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Películas:</strong>
+            <ul>
+              <li *ngFor="let f of user.hobbies.films">{{ f }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
+  <!-- Ningún usuario disponible -->
+  <ng-template #noUsers>
+    <div class="status empty">
+      <p>No hay usuarios disponibles.</p>
+    </div>
+  </ng-template>
 </div>
