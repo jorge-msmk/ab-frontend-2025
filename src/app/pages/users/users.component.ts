@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class UsersComponent {
   allUsers: any;
   error = true;
-
+  defaultAvatar = "https://img.freepik.com/vector-premium/ilustracion-vectorial-foto-avatar-perfil-usuario-defecto_664995-353.jpg";
   ngOnInit(){
     console.log('entramos on init')
     this.getUsers();
