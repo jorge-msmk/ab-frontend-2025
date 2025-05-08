@@ -1,141 +1,172 @@
-/* Importación de fuentes (se mantiene igual) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
-
-/* Estructura Vertical Pura */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    gap: 2rem; /* Espacio entre elementos hijos */
+    padding: 2rem 0; /* Espacio vertical interno */
+}
 .delete-container {
-  font-family: 'Source Sans 3', sans-serif;
-  width: 100%;
-  max-width: 500px; /* Más estrecho para flujo vertical */
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background-color: #f8f5f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(94, 80, 63, 0.1);
-  border: 1px solid #e0d8cc;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* Espaciado vertical uniforme */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 3rem; /* Aumentado de 2.5rem */
+    background-color: #f8f5f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(94, 80, 63, 0.1);
+    border: 1px solid #e0d8cc;
 }
-
-/* Elementos en columna estricta */
-.delete-container > * {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Título (se mantiene igual) */
+  
 .delete-container h1 {
-  font-family: 'Playfair Display', serif;
-  color: #4a3f35;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid #e0d8cc;
-  padding-bottom: 1rem;
-  margin: 0; /* Reset */
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #4a3f35;
+    text-align: center;
+    margin-bottom: 3rem; /* Aumentado de 2.5rem */
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0d8cc;
 }
-
-/* Cajas de eliminación - Versión Vertical */
+  
 .delete-box {
-  background-color: #fffdfa;
-  padding: 1.8rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(94, 80, 63, 0.05);
-  border-left: 4px solid #c7b8a5;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #fffdfa;
+    padding: 2rem; /* Aumentado de 1.75rem */
+    margin-bottom: 2.5rem; /* Aumentado de 2rem */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(94, 80, 63, 0.05);
+    border-left: 4px solid #c7b8a5;
+    transition: all 0.3s ease;
+}
+  
+.delete-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(94, 80, 63, 0.1);
+}
+  
+.delete-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Espacio adicional entre cajas */
+    margin: 2rem 0; /* Espacio vertical alrededor del contenedor */
 }
 
-/* Contenido interno también en columna */
-.delete-box-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-/* Todos los elementos de formulario en bloque */
-.delete-box label,
-.delete-box input,
-.delete-box button {
-  display: block;
-  width: 100%;
-}
-
-/* (El resto de estilos se mantienen IDÉNTICOS) */
 .delete-box label {
-  font-weight: 600;
-  color: #5e503f;
-  font-size: 1.1rem;
-  letter-spacing: 0.3px;
-  margin-bottom: 0;
+    display: block;
+    margin-bottom: 1rem; /* Aumentado de 0.75rem */
+    font-weight: 600;
+    color: #5e503f;
+    font-size: 1.05rem;
 }
-
+  
 .delete-box input {
-  padding: 0.9rem;
-  border: 1px solid #d4ccc1;
-  border-radius: 8px;
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  background-color: #fcfaf7;
-  transition: all 0.3s ease;
-}
-
-.delete-box input:focus {
-  outline: none;
-  border-color: #b5a794;
-  box-shadow: 0 0 0 3px rgba(181, 167, 148, 0.15);
-  background-color: #fff;
-}
-
-.delete-box button {
-  font-family: 'Playfair Display', serif;
-  background-color: #b5a794;
-  color: #fff;
-  border: none;
-  padding: 0.9rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(94, 80, 63, 0.1);
-  margin-top: 0.5rem;
-}
-
-.delete-box button:hover {
-  background-color: #9c8c7a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(94, 80, 63, 0.15);
-}
-
-/* Mensajes de feedback - Versión Vertical */
-.feedback-message {
-  font-family: 'Source Sans 3', sans-serif;
-  padding: 1.1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  margin-top: 0; /* El espaciado lo controla gap */
-}
-
-/* Responsive - Ajustes para móvil */
-@media (max-width: 600px) {
-  .delete-container {
-    padding: 1.5rem;
-    margin: 1rem auto;
-    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem; /* Aumentado de 0.9rem */
+    margin-bottom: 1.5rem; /* Aumentado de 1.25rem */
+    border: 1px solid #d4ccc1;
     border-radius: 8px;
-  }
+    font-size: 1rem;
+    background-color: #fcfaf7;
+    transition: all 0.2s ease;
+}
   
-  .delete-container h1 {
-    font-size: 1.7rem;
-  }
+.delete-box input:focus {
+    outline: none;
+    border-color: #b5a794;
+    box-shadow: 0 0 0 3px rgba(181, 167, 148, 0.2);
+    background-color: #fff;
+}
   
-  .delete-box {
-    padding: 1.4rem;
-  }
+.delete-box button {
+    background-color: #b5a794;
+    color: white;
+    border: none;
+    padding: 1rem 2rem; /* Aumentado de 0.9rem 1.75rem */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(94, 80, 63, 0.1);
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.5rem; /* Espacio adicional sobre el botón */
+}
+  
+.delete-box button:hover {
+    background-color: #9c8c7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(94, 80, 63, 0.2);
+}
+  
+.delete-box button::before {
+    content: '🗑️';
+    margin-right: 0.75rem; /* Aumentado de 0.5rem */
+    font-size: 1.1em;
+}
+  
+/* Mensajes de feedback */
+div[style*="color: green"] {
+    background-color: #f1ede5;
+    color: #5e503f !important;
+    padding: 1.25rem; /* Aumentado de 1rem */
+    border-radius: 8px;
+    margin: 1.75rem 0 !important; /* Aumentado y simplificado */
+    border-left: 4px solid #a89985;
+    box-shadow: 0 2px 8px rgba(168, 153, 133, 0.1);
+    display: flex;
+    align-items: center;
+}
+  
+div[style*="color: green"]::before {
+    content: '✓';
+    margin-right: 1rem; /* Aumentado de 0.75rem */
+    font-size: 1.2em;
+}
+  
+div[style*="color: red"] {
+    background-color: #f0e9e5;
+    color: #5e503f !important;
+    padding: 1.25rem; /* Aumentado de 1rem */
+    border-radius: 8px;
+    margin: 1.75rem 0 !important; /* Aumentado y simplificado */
+    border-left: 4px solid #b8a99a;
+    box-shadow: 0 2px 8px rgba(184, 169, 154, 0.1);
+    display: flex;
+    align-items: center;
+}
+  
+div[style*="color: red"]::before {
+    content: '✕';
+    margin-right: 1rem; /* Aumentado de 0.75rem */
+    font-size: 1.2em;
+}
+  
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    
+    .delete-container {
+        padding: 2rem; /* Reducido de 3rem */
+        margin: 1.5rem;
+    }
+    
+    .delete-container h1 {
+        font-size: 1.7rem;
+        margin-bottom: 2rem; /* Reducido para móviles */
+    }
+    
+    .delete-box {
+        padding: 1.75rem; /* Reducido de 2rem */
+        margin-bottom: 2rem; /* Reducido de 2.5rem */
+    }
+    
+    .delete-box-container {
+        gap: 2rem; /* Reducido de 2.5rem */
+        margin: 1.5rem 0; /* Reducido de 2rem */
+    }
 }
