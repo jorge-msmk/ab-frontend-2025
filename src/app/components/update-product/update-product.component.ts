@@ -15,8 +15,10 @@ export class UpdateProductComponent {
   updateError = false;
   notFound = false;
 
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
+
   findProduct() {
-    fetch(`http://localhost:3000/api/products/${this.searchId}`)
+    fetch(`${this.fetchUrl}/api/products/${this.searchId}`)
       .then(res => {
         if (!res.ok) throw new Error('No encontrado');
         return res.json();
@@ -32,7 +34,7 @@ export class UpdateProductComponent {
   }
 
   updateProductById() {
-    fetch(`http://localhost:3000/api/products/${this.searchId}`, {
+    fetch(`${this.fetchUrl}/api/products/${this.searchId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

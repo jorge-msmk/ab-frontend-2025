@@ -1,0 +1,91 @@
+/* Contenedor principal */
+div {
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  /* Título */
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Búsqueda por ID */
+  div > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  div > div:first-of-type input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  div > div:first-of-type button {
+    padding: 0.5rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  div > div:first-of-type button:hover {
+    background-color: #218838;
+  }
+  
+  /* Formulario de actualización */
+  form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  form input[type="text"],
+  form input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  form button {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0069d9;
+  }
+  
+  /* Mensajes */
+  div[style*="color: green"],
+  div[style*="color: red"] {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  

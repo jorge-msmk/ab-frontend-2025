@@ -16,8 +16,10 @@ export class UsersComponent {
     this.getUsers();
   }
 
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
+
   getUsers() {
-    fetch(`http://localhost:3000/api/users`)
+    fetch(`${this.fetchUrl}/api/users`)
       .then(response => response.json())
       .then(data => {
         this.allUsers = data

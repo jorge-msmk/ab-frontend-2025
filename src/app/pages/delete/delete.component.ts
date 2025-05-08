@@ -13,8 +13,10 @@ export class DeleteComponent {
   productDeleteSuccess: boolean | undefined;
   productDeleteFailed: boolean | undefined;
 
+  fetchUrl: string = window.location.href.includes('localhost') ? 'http://localhost:3000' : 'https://node-server-production-f614.up.railway.app';
+
   deleteProductById(id: string | undefined) {
-    fetch(`http://localhost:3000/api/products/${id}`, {
+    fetch(`${this.fetchUrl}/api/products/${id}`, {
       method: 'DELETE'
     })
       .then(response => {
