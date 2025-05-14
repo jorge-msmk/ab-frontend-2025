@@ -1,23 +1,25 @@
-<div class="search-box">
-    <label for="productId">Buscar producto por ID:</label>
-    <input type="number" [(ngModel)]="searchId" id="productId" placeholder="Introduce un ID" />
-    <button (click)="getProductById(searchId)">Buscar</button>
-</div>
-
-<hr />
-
-<!-- Resultado de la búsqueda -->
-<div *ngIf="product.id; else notFound">
-    <h2>Producto encontrado:</h2>
-    <div class="product-card">
-        <h3>{{ product.name }}</h3>
-        <p>Precio: ${{ product.price }}</p>
-        <img [src]="product.img || 'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'" alt="{{ product.name }}" />
+<div class="centered-container">
+    <div class="search-box">
+        <label for="productId">Buscar producto por ID:</label>
+        <input type="number" [(ngModel)]="searchId" id="productId" placeholder="Introduce un ID" />
+        <button (click)="animateButton($event); getProductById(searchId)">Buscar</button>
     </div>
-</div>
 
-<ng-template #notFound>
-    <div>
-        <p style="color: red;">Producto no encontrado.</p>
+    <hr />
+
+    <!-- Resultado de la búsqueda -->
+    <div *ngIf="product.id; else notFound">
+        <h2>Producto encontrado:</h2>
+        <div class="product-card">
+            <h3>{{ product.name }}</h3>
+            <p>Precio: ${{ product.price }}</p>
+            <img [src]="product.img || 'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'" alt="{{ product.name }}" />
+        </div>
     </div>
-</ng-template>
+
+    <ng-template #notFound>
+        <div>
+            <p class="not-found">Producto no encontrado.</p>
+        </div>
+    </ng-template>
+</div>

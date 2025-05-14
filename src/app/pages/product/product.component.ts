@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-product',
   imports: [FormsModule, CommonModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
   product: any;
@@ -29,5 +29,13 @@ export class ProductComponent {
         this.product = null;
         console.error('Error con Fetch:', error)
       });
+  }
+
+  // Función para activar la animación al hacer clic en el botón
+  animateButton(event: MouseEvent): void {
+    const button = event.target as HTMLElement;
+    button.classList.remove('clicked');
+    void button.offsetWidth; // Forzamos la reflujo para reiniciar la animación
+    button.classList.add('clicked');
   }
 }
