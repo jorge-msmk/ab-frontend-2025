@@ -2,7 +2,7 @@
     <div class="search-box">
         <label for="productId">Buscar producto por ID:</label>
         <input type="number" [(ngModel)]="searchId" id="productId" placeholder="Introduce un ID" />
-        <button (click)="animateButton($event)">Buscar</button>
+        <button (click)="animateButton($event); getProductById(searchId)">Buscar</button>
     </div>
 
     <hr />
