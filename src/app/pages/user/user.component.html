@@ -7,39 +7,41 @@
 <hr />
 
 <!-- Resultado de la búsqueda -->
-<div *ngIf="user.id; else notFound">
-    <h2>Usuario encontrado:</h2>
-    <div class="user-card">
-        <img [src]="user.img || defaultImg" alt="imagen user">
-        <h3>{{ user.name }}</h3>
-        <p>Edad: {{ user.edad }}</p>
-        <p>Género: {{ user.gender }}</p>
-        <p>Residencia: {{ user.residency }}</p>
-        <div class="hobbies">
-            <div>
-              <strong>Deportes:</strong>
-              <ul>
-                <li *ngFor="let d of user.hobbies.deportes">{{ d }}</li>
-              </ul>
-            </div>
-            <div>
-              <strong>Estudios:</strong>
-              <ul>
-                <li *ngFor="let e of user.hobbies.estudios">{{ e }}</li>
-              </ul>
-            </div>
-            <div>
-              <strong>Películas:</strong>
-              <ul>
-                <li *ngFor="let f of user.hobbies.films">{{ f }}</li>
-              </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="result-container">
+  <div *ngIf="user.id; else notFound">
+      <h2>Usuario encontrado:</h2>
+      <div class="user-card">
+          <img [src]="user.img || defaultImg" alt="imagen user">
+          <h3>{{ user.name }}</h3>
+          <p>Edad: {{ user.edad }}</p>
+          <p>Género: {{ user.gender }}</p>
+          <p>Residencia: {{ user.residency }}</p>
+          <div class="hobbies">
+              <div>
+                <strong>Deportes:</strong>
+                <ul>
+                  <li *ngFor="let d of user.hobbies.deportes">{{ d }}</li>
+                </ul>
+              </div>
+              <div>
+                <strong>Estudios:</strong>
+                <ul>
+                  <li *ngFor="let e of user.hobbies.estudios">{{ e }}</li>
+                </ul>
+              </div>
+              <div>
+                <strong>Películas:</strong>
+                <ul>
+                  <li *ngFor="let f of user.hobbies.films">{{ f }}</li>
+                </ul>
+              </div>
+          </div>
+      </div>
+  </div>
 
-<ng-template #notFound>
-    <div>
-        <p style="color: red;">Usuario no encontrado.</p>
-    </div>
-</ng-template>
+  <ng-template #notFound>
+      <div class="not-found">
+        Usuario no encontrado.
+      </div>
+  </ng-template>
+</div>
